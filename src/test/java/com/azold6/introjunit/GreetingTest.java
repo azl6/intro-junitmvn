@@ -1,18 +1,24 @@
 package com.azold6.introjunit;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class GreetingTest {
+    Greeting greeting;
+
+    @BeforeEach
+    void setUp(){
+        System.out.println("In @BeforeEach...");
+        greeting = new Greeting();
+    }
 
     @Test
     void helloWorld() {
-        Greeting greeting = new Greeting();
         System.out.println(greeting.helloWorld());
     }
 
     @Test
     void testHelloWorld() {
-        Greeting greeting = new Greeting();
         System.out.println(greeting.helloWorld("Alex"));
     }
 }
